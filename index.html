@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahmoud | Front-End Developer</title>
+<link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+  <!-- ===== NAVIGATION BAR ===== -->
+  <nav>
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="home">
+    <h1>Hi, I’m Mahmoud 👋</h1>
+    <p>Front-End Developer passionate about crafting modern, responsive, and user-friendly websites.</p>
+    <a href="#projects" class="btn">See My Work</a>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a front-end developer who loves transforming creative ideas into functional web experiences. 
+      I focus on clean code, elegant design, and accessibility. I’m constantly learning new technologies 
+      to build better, faster, and more interactive websites.
+    </p>
+  </section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects-container">
+      <div class="project">
+        <h3>Eventwy App</h3>
+        <p>An event discovery and ticket booking platform with a clean UI and responsive layout.</p>
+      </div>
+      <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>My personal portfolio built using HTML, CSS, and JavaScript with smooth scrolling navigation.</p>
+      </div>
+      <div class="project">
+        <h3>Weather Dashboard</h3>
+        <p>A weather web app that fetches live data from an API and displays it in a simple interface.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <span class="skill">HTML</span>
+      <span class="skill">CSS</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">React</span>
+      <span class="skill">UI/UX</span>
+      <span class="skill">Responsive Design</span>
+      <span class="skill">Git & GitHub</span>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Let’s connect! Email me at <a href="mailto:mmahmoudmmohamed@gmail.com">mmahmoudmmohamed@gmail.com</a></p>
+        <p>Whatsapp: 01204547192</p>
+
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 Mahmoud. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Highlight active link while scrolling
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        if (scrollY >= sectionTop - 120) {
+          current = section.getAttribute("id");
+        }
+      });
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
